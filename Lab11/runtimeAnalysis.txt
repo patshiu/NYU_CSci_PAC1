@@ -1,0 +1,11 @@
+Part 1: Equality of Linked Lists
+>> equalLists(ListNode<T> list1, ListNode<T> list2); 
+has linear Big O of N. 
+
+Part 2: Checking if a list is recursive
+>> terminates(ListNode<T> list)l
+has linear Big O of N. 
+
+Part 3: Implementing a Max-Stack
+FastMaxStack has a constant Big O, as required by the assignment
+SlowMaxStack has a Big O of N, since it searches the list to find the max value every time getMaxSoFar() is called. 

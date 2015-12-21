@@ -67,13 +67,13 @@ Write all generations to the screen (don't forget the generation numbers), with 
 
 Once your program is working, also terminate if the world is the same as the previous one (this will happen for life4.dat).  
 
-- (FileStringReader(name) reads a string from file name)[http://www.cs.nyu.edu/courses/spring05/V22.0101-001/HW/FileStringReader.txt]
+- [FileStringReader(name) reads a string from file name](http://www.cs.nyu.edu/courses/spring05/V22.0101-001/HW/FileStringReader.txt)
 - Data for the Game of Life
-    - (life1.dat)[http://www.cs.nyu.edu/courses/fall00/V22.0101-003/life1.dat]
-    - (life2.dat)[http://www.cs.nyu.edu/courses/fall00/V22.0101-003/life2.dat]
-    - (life3.dat)[http://www.cs.nyu.edu/courses/fall00/V22.0101-003/life3.dat]
-    - (life4.dat)[http://www.cs.nyu.edu/courses/fall00/V22.0101-003/life4.dat]
-    - (life5.dat)[http://www.cs.nyu.edu/courses/fall00/V22.0101-003/life5.dat]
+    - [life1.dat](http://www.cs.nyu.edu/courses/fall00/V22.0101-003/life1.dat)
+    - [life2.dat](http://www.cs.nyu.edu/courses/fall00/V22.0101-003/life2.dat)
+    - [life3.dat](http://www.cs.nyu.edu/courses/fall00/V22.0101-003/life3.dat)
+    - [life4.dat](http://www.cs.nyu.edu/courses/fall00/V22.0101-003/life4.dat)
+    - [life5.dat](http://www.cs.nyu.edu/courses/fall00/V22.0101-003/life5.dat)
 
 *Michael Overton & Samuel Marateck*
 *SUN Nov 3 22:23:14 EST 2002*

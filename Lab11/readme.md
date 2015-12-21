@@ -1,65 +1,78 @@
 #Grader's Comments
 
-**Grade:  10.0    (max 10.0)**
+**Grade:  ?**  
 Submitted Attachments  
-File attachment RunCalculator.java ( 7 KB; Sep 29, 2015 10:49 pm )  
+File attachment  Pat_SHIU_Lab11.zip ( 8 KB; Dec 20, 2015 11:36 pm )
 
 #####Additional instructor's comments about your submission
-Great job.  Your program compiled and ran successfully according to the assignment's spec.
-
-One note about the functioning of your program: the way the division by zero error is handled, the program assumes that the user meant to do proper division.  However, maybe the user meant to use another operator with zero but used "/" by accident.  The assignment spec did not require you to ask for a new operator per se (even though the sample output shows that), so I did not take any points off.  You handled the error and left the buffer unchanged - that was the priority, according to the spec.  But from a user experience point of view, it might be better to make no assumptions about the operator that the user wanted to use prior to the error.  The way that you handled the unknown operator was perfect - if your division by zero error handling could be the same, that would be great.
+?~
 
 
 
 ----------------------------------------------------
-#Lab 3: Calculator
+#Lab 11 : Linked List Problems
 
-Write a simple calculator program that can do addition, subtraction, multiplication and division.
+This homework assignment consists of three problems to solve involving linked lists. For each problem, you'll also have to analyze the running time. Place your analysis in a file called runtimeAnalysis.txt and submit it with your Java code.
 
-The program should initially accept 2 operands and a mathematical operator (+, -, *, /) then store the results. The succeeding steps should only ask for the operator and a new input number. The operator would then be applied to the previously stored result and the new input number. Also include two special special operators, c and x, where c would clear the buffer and x will exit the program.
+Download the supporting code for this assignment [here](http://cs.nyu.edu/courses/fall14/CSCI-GA.1133-001/HW/linked-lists.zip).
 
-Ex (the blue text indicates user input):
+####Part 1: Equality of Linked Lists
+There is a static function in LLHomeworkFunctions called equalLists. Currently, it compared the two lists by calling "list1 == list2". We know that's incorrect because it's only comparing the addresses of the lists, and not the contents. We want two lists with equal contents to be equal.
 
-    1st input: 3
-    op: +
-    2nd input: 2.5
-    ans: 5.5
-    op: *
-    more input: 3
-    ans: 16.5
-    op: c
-    ans: 0.0
-    op: +
-    more input: 10
-    ans: 10.0
-    op: x
-  
-Your program should also display an error message if the user attempts to divide a number by 0. The buffer should not be cleared if this error occured.
+Implement to `equalLists()` function. Analyze the running time of `equalLists()`
 
-Ex:
+__Examples__
+ 
 
-    1st input: -3
-    op: *
-    2nd input: 2
-    ans: -6.0
-    op: /
-    more input: 0
-    Error: division by zero
-    op: +
-    more input: 10
-    ans: 4.0
-  
-Similarly, your program should display an error message for any unrecognized operator. It should also not affect the value of the buffer.
+2 -> 4 -> 5 -> NULL
 
-Ex:
+2 -> 4 -> 5 -> 1 -> NULL
 
-    1st input: -3
-    op: $
-    2nd input: 2
-    Error: Unknown operator $
-    op: +
-    more input: 6
-    ans: 3.0
-  
-Good luck!
+`false`
+
+2 -> 4 -> 5 -> NULL
+
+2 -> 5 -> 4 -> NULL
+
+`false`
+
+2 -> 4 -> 5 -> NULL
+
+2 -> 4 -> 5 -> NULL
+
+`true`
+
+ 
+
+####Part 2: Checking if a list is recursive
+Some lists refer back to themselves, making them tricky to process. For example, consider the following list, where the addresses are indexed by capital letters:
+
+A value=4 next=B  
+
+B value=2 next=C  
+
+C value=5 next=A  
+
+If you keep calling list.next, you will never reach a NULL pointer. Instead, looking at the values, you'll keep repeating the sequence 4,2,5,4,2,5,4,2,5...  
+
+Your goal is to implement the function terminates(ListNode list), which returns true if you'll ever reach a null pointer by continually calling list.next. In order to get this to work, you'll need to actually use "==" to compare addresses. A list will not terminate if a node points back to an address that was previously found. Do not use a Hash Table or Tree for your implementation, since we haven't gone over them yet; using a less efficient implementation is okay. Analyze the running time of your algorithm.
+
+Examples 
+
+2 -> 4 -> 5 -> NULL  
+
+`true`
+
+2 -> 4 -> 5 -> (points back to previous node) 4 -> 5 -> 4 -> 5 -> 4 -> etc  
+
+`false`
+
+####Part 3: Implementing a Max-Stack
+A MaxStack is like a stack, except in addition to push() and pop(), we also have a function called getMaxSoFar(), which returns the maximum value that's in the stack.
+
+Provided is an implementation of MaxStack called SlowMaxStack, but it's inefficient in terms of time. In order to implement getMaxSoFar(), it reads all of the values of the stack (implemented as a linked list) and returns the maximum. Analyze the running time of SlowMaxStack.
+
+Your goal is to create a new class called FastMaxStack where the running time of push, pop, and getMaxSoFar are all constant, or O(1). You'll do this by having a second stack in parallel with the first one that keeps track of the maximum value of stack at every level. Analyze your running time and describe why it's constant for all three methods.
+
+Testing: ensure that FastMaxStack always returns the same answer as SlowMaxStack
 

@@ -43,21 +43,21 @@ If the user wants to change the car's position, main() will prompt the user for 
 
 You should write a method for each of the following:
 
-    -**color assignment:** Randomly picks one of the five colors (represented by a letter) and returns the corresponding char to main(). This method should be called once at the beginning of the program. The color will not change during the execution of the program.
+    - **color assignment:** Randomly picks one of the five colors (represented by a letter) and returns the corresponding char to main(). This method should be called once at the beginning of the program. The color will not change during the execution of the program.
 
-    -**move car horizontally:** This method will need the current X coordinate and the number of spaces you would like to move the car (a negative value will move the car left; positive value will move the car right). It will return the new horizontal position of the car after it is moved.
+    - **move car horizontally:** This method will need the current X coordinate and the number of spaces you would like to move the car (a negative value will move the car left; positive value will move the car right). It will return the new horizontal position of the car after it is moved.
     If the car's ignition is not on, this method tells the user that s/he must turn the ignition on first and returns the current X position.
     If the user tries to move the car beyond the border of the 20 X 20 grid, this method should not move the car; instead you should report an error message and return the current X position.
     Hints: You will also have to pass this method the ignition status.
 
-    -**move car vertically:** This method will need the current Y coordinate and the number of spaces you would like to move the car (a negative value will move the car up; positive value will move the car down). It will return the new vertical position of the car after it is moved.
+    - **move car vertically:** This method will need the current Y coordinate and the number of spaces you would like to move the car (a negative value will move the car up; positive value will move the car down). It will return the new vertical position of the car after it is moved.
     If the car's ignition is not on, this method tells the user that s/he must turn the ignition on first and returns the current Y position. 
     If the user tries to move the car beyond the border of the 20 X 20 grid, this method should not move the car; instead you should report an error message and return the current Y position.
     Hints: You will also have to pass this method the ignition status.
 
-    -**change ignition status:** This method will return the opposite of the ignition value which is given to it as a parameter (e.g. it will turn the car off when it is on or on when it is off). The new ignition value is returned for storage in main()  
+    - **change ignition status:** This method will return the opposite of the ignition value which is given to it as a parameter (e.g. it will turn the car off when it is on or on when it is off). The new ignition value is returned for storage in main()  
 
-    -**report the state of the car:** After each action, you should print the "state" of the car. This method will take all the car's characteristics as parameters and report the status of each (including a copy of the cars position in the grid). Note: since you are only printing one car at a time is does not matter if more than one is in the same position.
+    - **report the state of the car:** After each action, you should print the "state" of the car. This method will take all the car's characteristics as parameters and report the status of each (including a copy of the cars position in the grid). Note: since you are only printing one car at a time is does not matter if more than one is in the same position.
 
 **For example:**
 

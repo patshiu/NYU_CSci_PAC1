@@ -1,13 +1,11 @@
 #Grader's Comments
 
-**Grade:  10.0    (max 10.0)**
+**Grade:  ?**
 Submitted Attachments  
-File attachment RunCalculator.java ( 7 KB; Sep 29, 2015 10:49 pm )  
+File attachment File attachment Pat_Shiu_Lab10.zip ( 7 KB; Dec 12, 2015 4:57 pm ) 
 
 #####Additional instructor's comments about your submission
-Great job.  Your program compiled and ran successfully according to the assignment's spec.
-
-One note about the functioning of your program: the way the division by zero error is handled, the program assumes that the user meant to do proper division.  However, maybe the user meant to use another operator with zero but used "/" by accident.  The assignment spec did not require you to ask for a new operator per se (even though the sample output shows that), so I did not take any points off.  You handled the error and left the buffer unchanged - that was the priority, according to the spec.  But from a user experience point of view, it might be better to make no assumptions about the operator that the user wanted to use prior to the error.  The way that you handled the unknown operator was perfect - if your division by zero error handling could be the same, that would be great.
+~
 
 
 

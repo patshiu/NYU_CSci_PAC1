@@ -9,7 +9,7 @@ Great job.  Your code compiled and ran successfully according to the assignment'
 
 
 ----------------------------------------------------
-#Lab 6 : Small Int Class 
+#Lab 7: Car w/ OOP
 
 Please read the assignment carefully. If you need help, don't hesitate to contact the TA or the Professor during their office hours.  
 

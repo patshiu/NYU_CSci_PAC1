@@ -1,6 +1,9 @@
-#Grader's Comments
-File attachment TimeDifference.java ( 6 KB; Sep 19, 2015 8:56 pm )
-Additional instructor's comments about your submission
+#Grader's Comments  
+
+**Grade:  9.0    (max 10.0)**
+File attachment TimeDifference.java ( 6 KB; Sep 19, 2015 8:56 pm )  
+
+#####Additional instructor's comments about your submission
 -1 for incorrect output due to a calculation error: the difference between 230000 and 210001 should be 15959, not -15959.  For other input pairs as well, your values were correct but the signs were not.
 
 Your program calculated the values of the differences but did not give the right positivity/negativity.  Your code shows a lot of work and thought, but unfortunately a small bug caused it to give incorrect answers for each output pair: you subtracted the first time from the second, rather than the other way around.  Please make sure to check that your code matches the sample output in future assignments.

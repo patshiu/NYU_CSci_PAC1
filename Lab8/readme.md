@@ -2,80 +2,78 @@
 
 **Grade:  10.0    (max 10.0)**
 Submitted Attachments  
-File attachment Pat_SHIU_lab_8-submit.zip ( 7 KB; Nov 24, 2015 3:34 am )
+File attachment Pat_SHIU_Lab9.zip ( 8 KB; Dec 3, 2015 6:07 pm )
 
 #####Additional instructor's comments about your submission
-Great job.  Your classes compiled and produced the correct output.
-
-One suggestion I would make: consider making individual toString() methods for each of your classes so that you can simplify your toString() method in Checkout.  Using "instanceof" is fine, but it might be easier to just print the array's objects with System.out.println().  Creating toString() methods for each class would allow you to do that.
+Great job.  Your code worked correctly and matched the assignment spec.
 
 
 
 ----------------------------------------------------
-#Lab 8 : Dessert Shoppe
+#Lab 9 : Game Of Life
 
-##Homework: Polymorphism & Inheritence
+Consider a two dimensional array with M rows and N columns. This represents the world in which some organisms live. Each of the M by N cells in this array is either occupied (if an organism lives there) or is vacant. No more than one organism can live in any one cell at any time. Each cell, except those on the boundaries (the edge of the world), has exactly eight neighboring cells (above, below, left, right, and four diagonals). The cells on the boundaries have less than eight neighboring cells.
 
-For this homework assignment, you will be writing software in support of a Dessert Shoppe which sells candy by the pound, cookies by the dozen, ice cream, and sundaes (ice cream with a topping). Your software will be used for the checkout system.
+Initially, there is a given population of organisms occupying certain of the cells. At each succeeding generation, the organisms reproduce and die as follows:
 
-To do this, you will implement an inheritance hierarchy of classes derived from a DessertItem abstract superclass.
+ 
 
-The `Candy`, `Cookie`, and `IceCream` classes will be derived from the `DessertItem` class.
+- Each organism of the current generation survives to the next generation if, and only if, it has 2 or 3 neighbors (a neighbor is an organism that lives in a neighboring cell). Otherwise, it dies and its cell becomes empty in the next generation. Note: it dies if it is "lonely" or "overcrowded"".
 
-The `Sundae` class will be derived from the `IceCream` class.
+- Each vacant cell in the current generation becomes occupied by a new organism in the next generation if, and only if, it has exactly 3 neighbors. Otherwise, it remains vacant in the next generation.  
 
-You will also write a `Checkout` class which maintains an array of `DessertItem`s. Since we are not using dynamic arrays yet, you will have to maintain an instance variable 'numberOfItems' which keeps tracks of how many DessertItems are in your array. You can hardcode the array size to 100.
+For example, suppose the initial world (the "zero"th generation) is as follows, using X to indicate the occupied cells and blanks for the vacant cells:
 
-----------------------------
-###The DessertItem Class
+```
+                  X X
+         XXX                XX       XXXX
+                  X X       XX
 
-The `DessertItem` class is an abstract superclass from which specific types of DessertItems can be derived. It contains only one data member, a name. It also defines a number of methods. All of the `DessertItem` class methods except the `getCost()` method are defined in a generic way in the file, DessertItem.java, provided for you along with the other homework specific files. The `getCost()` method is an abstract method that is not defined in the `DessertItem` class because the method of determining the costs varies based on the type of item. Tax amounts should be rounded to the nearest cent. For example, the calculating the tax on a food item with a cost of 199 cents with a tax rate of 2.0% should be 4 cents.
+```
 
-__DO NOT CHANGE THE DessertItem.java file!__ Your code must work with this class as it is provided.
+Then the next generation is
 
-----------------------------
+```
 
-###The DessertShoppe Class
+          X                           XX
+          X                 XX        XX
+          X                 XX        XX
 
-The `DessertShoppe` class is also provided for you in the file, `DessertShoppe`.java. It contains constants such as the tax rate as well the name of the store, the maximum size of an item name and the width used to display the costs of the items on the receipt. Your code should use these constants wherever necessary! The `DessertShoppe` class also contains the `cents2dollarsAndCents()` method which takes an integer number of cents and returns it as a String formatted in dollars and cents. For example, 105 cents would be returned as "1.05".
+```
 
-----------------------------
+On the input file, the blanks are represented by dots.
 
-###The Derived Classes
-All of the classes which are derived from the `DessertItem` class must define a constructor. Please see the provided `TestCheckout` class to determine the parameters for the various constructors. Each derived class should be implemented by creating a file with the correct name, eg., Candy.java.
+Write a program to play this Game of Life. Your program should read the initial world from a file (see below) and repeatedly generate new generations, prompting the user each time to see if he or she wants to see the next generation or terminate the program. Also, the program should terminate automatically if the world becomes empty, displaying a message accordingly (this will happen for life3.dat).
 
-The `Candy` class should be derived from the `DessertItem` class. A `Candy` item has a weight and a price per pound which are used to determine its cost. For example, 2.30 lbs.of fudge @ .89 /lb. = 205 cents. The cost should be rounded to the nearest cent.
+Use two-dimensional arrays of type `char` to store the old and new generations respectively. To keep things simple, assume that M=25 and N=75, i.e. the world has 25 rows and 75 columns, and define these in a `final` statement before declaring your array variables.
 
-The `Cookie` class should be derived from the `DessertItem` class. A `Cookie` item has a number and a price per dozen which are used to determine its cost. For example, 4 cookies @ 399 cents /dz. = 133 cents. The cost should be rounded to the nearest cent.
+Data files for testing your program are provided below. You should make sure your program works correctly on all these files, and you should also try your own test data. Download these files simply by choosingsave Target link as when the cursor is on the specific file on the The Data for the Game of Life page and the mouse right button is pressed. If you type .dat after the file name, it will be saved as dat file. Thus your program would read for instance, file0.dat. The program should prompt the user for the name of the input file (use a String variable).
 
-The `IceCream` class should be derived from the `DessertItem` class. An `IceCream` item simply has a cost.
+Empty cells are represented with dots and occupied cells with X's. Read the data and assign the data to a two-dimensional array using two nested for loops. The outer loop reads a string consisting of the data on a given line of the input file. The inner loop assigns the data to a given row of the array. In order to read the file, you will have to use Scanner similarly to the way it is used in this file.
 
-The `Sundae` class should be derived from the `IceCream` class. The cost of a `Sundae` is the cost of the `IceCream` plus the cost of the topping.
+ 
 
+ 
 
-----------------------------
+###Programming Details
 
-###The Checkout Class
+You need two 2-dimensional arrays –- the new generation should be created based on information from the old generation. If you use only one array, you will find that your old generation is overwritten by the new one before you have finished using all the information you need from it.  
 
-The `Checkout` class, provides methods to enter dessert items into the cash register, clear the cash register, get the number of items, get the total cost of the items (before tax), get the total tax for the items, and get a String representing a receipt for the dessert items. The total tax should be rounded to the nearest cent. The complete specifications for theCheckout class are provided for you in (JavaDoc format)[http://cs.nyu.edu/courses/fall14/CSCI-GA.1133-001/HW/dessert-shoppe/Checkout.html].
+You should create a "border" of cells that always stay empty by declaring your arrays from 0 to M+1 and from 0 to N+1. This way, the cells on the edge will also have eight neighboring cells and won't need special treatment.  
 
+Include at least two non-void methods. One should take a world and the coordinates of a cell and return the number of neighbors (organisms in neighboring cells) that the cell has. The other should take a generation array and return a Boolean value that tells whether or not the world represented by the array is empty.  
 
-----------------------------
+Write all generations to the screen (don't forget the generation numbers), with a prompt to the user to type a key when ready to see the next one.  
 
-###Testing
+Once your program is working, also terminate if the world is the same as the previous one (this will happen for life4.dat).  
 
-A simple testdriver, TestCheckout.java along with its expected_output.txt, are provided for you to test your class implementations. You can add additional tests to the driver to more thoroughly test your code.
+- (FileStringReader(name) reads a string from file name)[http://www.cs.nyu.edu/courses/spring05/V22.0101-001/HW/FileStringReader.txt]
+- Data for the Game of Life
+    - (life1.dat)[http://www.cs.nyu.edu/courses/fall00/V22.0101-003/life1.dat]
+    - (life2.dat)[http://www.cs.nyu.edu/courses/fall00/V22.0101-003/life2.dat]
+    - (life3.dat)[http://www.cs.nyu.edu/courses/fall00/V22.0101-003/life3.dat]
+    - (life4.dat)[http://www.cs.nyu.edu/courses/fall00/V22.0101-003/life4.dat]
+    - (life5.dat)[http://www.cs.nyu.edu/courses/fall00/V22.0101-003/life5.dat]
 
-
-----------------------------
-
-Submit the 5 source files, Candy.java, Cookie.java, IceCream.java, Sundae.java, and Checkout.java.
-
-*Created by Suzanne Balik @ NC State University*
-
-Additional resources for assignment
-- File attachment DessertItem.java ( 1 KB; Nov 11, 2015 6:10 pm )
-- File attachment DessertShoppe.java ( 1 KB; Nov 11, 2015 6:10 pm )
-- File attachment expected-output.txt ( 1 KB; Nov 11, 2015 6:10 pm )
-- File attachment TestCheckout.java ( 2 KB; Nov 11, 2015 6:10 pm )
-
+*Michael Overton & Samuel Marateck*
+*SUN Nov 3 22:23:14 EST 2002*

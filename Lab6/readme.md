@@ -44,7 +44,7 @@ Decimal     | Binary
 254         |11111110
 255         |11111111
 
-    - Thus, for example, the decimal number 25 is represented in binary as 00011001, meaning 0 times 128 plus 0 times 64 plus 0 times 32 plus 1 times 16 plus 1 times 8 plus 0 times 4 plus 0 times 2 plus 1 times 1. Notice that EACH BIT CORRESPONDS TO A POWER OF 2. Make sure you understand how this works before you go any further.
+- Thus, for example, the decimal number 25 is represented in binary as 00011001, meaning 0 times 128 plus 0 times 64 plus 0 times 32 plus 1 times 16 plus 1 times 8 plus 0 times 4 plus 0 times 2 plus 1 times 1. Notice that EACH BIT CORRESPONDS TO A POWER OF 2. Make sure you understand how this works before you go any further.
  
 - An instance getter method getHex (returns a String, no parameters) should take the number stored in the instance variable value, generate the corresponding hexadecimal string and return that string. YOU MUST WRITE THIS METHOD BY YOURSELF. YOU MAY NOT CALL A METHOD FROM THE JAVA LIBRARY TO DO THIS JOB. YOU MAY NOT COPY FROM A CLASSMATE. HOWEVER, YOU MAY TALK TO YOUR CLASSMATES ABOUT HOW TO DO IT. YOU HAVE TO FIGURE OUT HOW TO EXPRESS THIS IDEA USING A LOOP THAT WORKS AND IS WELL DOCUMENTED, EXPLAINING HOW IT WORKS ***WITH AN EXAMPLE***. Since the grader may change your MAXVALUE constant, you must generate the digits from RIGHT to LEFT. One way to do so is to use repeated division. See Liang appendix F. Remember YOU MUST EXPLAIN WHY IT WORKS, USING AN EXAMPLE.  
 For your explanation, choose a number, say between 300 and 1000 for your example. Don't use the same example as a classmate, if you can avoid it. (Of course, some people may choose the same example by accident -that's OK.) This explanation MUST APPEAR IN YOUR COMMENTS.  
@@ -67,7 +67,7 @@ Decimal     | Hexadecimal
 256         |100 
 
 
-    - Thus, for example, the decimal number 100 is represented in hexadecimal as 64, meaning 6 times 16 plus 4 times 1. Notice that EACH DIGIT CORRESPONDS TO A POWER OF 16. Make sure you understand how this works before you go any further.  
+- Thus, for example, the decimal number 100 is represented in hexadecimal as 64, meaning 6 times 16 plus 4 times 1. Notice that EACH DIGIT CORRESPONDS TO A POWER OF 16. Make sure you understand how this works before you go any further.  
 
 
 

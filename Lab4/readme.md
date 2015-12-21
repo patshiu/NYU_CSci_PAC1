@@ -1,3 +1,15 @@
+#Grader's Comments
+
+**Grade:  9.0    (max 10.0)**
+Submitted Attachments  
+File attachment  Car_v2.java ( 9 KB; Oct 4, 2015 3:32 pm ) 
+
+#####Additional instructor's comments about your submission
+-1 for using class/static variables.  The assignment spec told you not to do this: IMPORTANT: You may not use any class variables. This means that you are not allowed to declare static variables outside of a method. The variables representing the car's properties must be declared within main().  
+
+Otherwise, great job.  Your program compiled and ran according to the assignment's spec.  
+
+
 ----------------------------
 #Lab 3: Car
 
@@ -77,7 +89,7 @@ You should write a method for each of the following:
   - For example, the output might look something like this (indicating car location on the grid with 'R' because the car's color is red):
 
   ```
-  
+
   Car Information
   Color: red
   Ignition: on

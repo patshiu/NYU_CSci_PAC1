@@ -40,7 +40,6 @@ If the user selects '1' to turn the car's ignition on or off, then your program 
 If the user selects '2' to change the car's position, you will prompt the user for a direction. For example:
 
 ```
-
   In which direction would you like to move the car?
   H: horizontal
   V: vertical
@@ -52,7 +51,6 @@ And then prompt for the distance. For example:
 
 
 ```
-
   How far (negative value to move left)?    or    How far (negative value to move up)?
 
 ```
@@ -89,7 +87,6 @@ You should write a method for each of the following:
   - For example, the output might look something like this (indicating car location on the grid with 'R' because the car's color is red):
 
   ```
-
   Car Information
   Color: red
   Ignition: on

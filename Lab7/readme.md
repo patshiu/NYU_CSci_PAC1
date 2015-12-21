@@ -10,7 +10,7 @@ Great job.  Your code compiled and ran successfully according to the assignment'
 
 
 ----------------------------------------------------
-#Lab 3: Calculator
+#Lab 7: Car w/ OOP
 
 Write a program that creates Car objects. Your Car class should store the following qualities of a car:
 

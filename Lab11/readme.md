@@ -1,11 +1,13 @@
 #Grader's Comments
 
-**Grade:  ?**  
+**Grade:  7.5 :confounded:**  
 Submitted Attachments  
 File attachment  Pat_SHIU_Lab11.zip ( 8 KB; Dec 20, 2015 11:36 pm )
 
 #####Additional instructor's comments about your submission
-?~
+-2 for not passing any of the tests of the equalTests() method.  Your method seems to go into an infinite loop each time.  
+  
+-0.5 for not passing a test of terminates() when the list does terminate.  Your program crashes instead of returning "true".  
 
 
 
